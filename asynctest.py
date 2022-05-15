@@ -9,7 +9,7 @@ async def count2():
         print(letter)
         await asyncio.sleep(2)
 async def main():
-    await asyncio.gather(count(),count2())
+    await asyncio.gather(count(),count2()) # What does gather mean?
 
 
 asyncio.run(main())
