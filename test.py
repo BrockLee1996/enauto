@@ -16,8 +16,11 @@ class Commands:
 def Parser(prompt,cmdclass):
     while True:
         usercmd = input(prompt)
-        usercmd = usercmd.split(" ")
-        command = cmdclass + usercmd[0] + "("+"'"+usercmd[1]+"'"+")" # The arguments need to passed as a string, otherwise eval thinks this is some type of variable
-        eval(command)
+        if len(usercmd.split(" ")) != 1: 
+            usercmd = usercmd.split(" ")
+            command = cmdclass + usercmd[0] + "("+"'"+usercmd[1]+"'"+")" # The arguments need to passed as a string, otherwise eval thinks this is some type of variable
+            eval(command)
+        else:
+            print("Command is less than 1")
 
 UI()                        
